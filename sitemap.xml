@@ -5,8 +5,25 @@
   </url>
   <url>
     <loc>https://linkedinoyuncozumleri.com/today/</loc>
+  </url>
+  <url>
     <loc>https://linkedinoyuncozumleri.com/zip/</loc>
+  </url>
+  <url>
     <loc>https://linkedinoyuncozumleri.com/queens/</loc>
+  </url>
+  <url>
     <loc>https://linkedinoyuncozumleri.com/tango/</loc>
   </url>
+  <!-- Optional: Add individual solution pages if they are static -->
+  <url>
+    <loc>https://linkedinoyuncozumleri.com/zip/20250802.html</loc>
+  </url>
+  <url>
+    <loc>https://linkedinoyuncozumleri.com/queens/20250802.html</loc>
+  </url>
+  <url>
+    <loc>https://linkedinoyuncozumleri.com/tango/20250802.html</loc>
+  </url>
+  
 </urlset>
