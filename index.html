@@ -52,6 +52,31 @@
       </ul>
     </section>
 
+    <!-- ---------- CONTACT SECTION ---------- -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Bize Ulaşın</h2>
+      <p>.</p>
+
+      <!-- Replace the Formspree URL below with your own form endpoint -->
+      <form id="contact-form" action="https://formspree.io/f/xqayrpzy" method="POST">
+      <label>Email adresiniz: <input type="email" name="email"> </label>
+      <label>Mesajınız: <textarea name="message"></textarea> </label>
+      <button type="submit">Gönder</button>
+      </form>
+    </div>
+
+    <!-- Modal overlay -->
+<div id="thankyou-modal" class="modal">
+  <div class="modal-content">
+    <h3>✅ Teşekkürler!</h3>
+    <p>Mesajınız başarıyla gönderildi.</p>
+    <button id="close-modal">Kapat</button>
+  </div>
+</div>
+    
+  </section>
+
     <footer>
       <p>&copy; 2025 LinkedIn Oyun Çözümleri. Tüm hakları saklıdır.</p>
       <p>
@@ -62,5 +87,42 @@
     </footer>
     
   </main>
+  <script>
+  const form = document.getElementById('contact-form');
+  const modal = document.getElementById('thankyou-modal');
+  const closeBtn = document.getElementById('close-modal');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        modal.style.display = 'flex'; // show modal
+      } else {
+        alert("⚠️ Daha sonra tekrar deneyin.");
+      }
+    } catch (err) {
+      alert("⚠️ Bağlantınızı kontrol edip tekrar deneyin.");
+    }
+  });
+
+  // Close modal on button click
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Close modal when clicking outside
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+</script>
 </body>
 </html>
